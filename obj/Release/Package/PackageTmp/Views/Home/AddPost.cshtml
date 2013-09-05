@@ -1,0 +1,15 @@
+﻿@model IhorsSlaves.Models.Post
+
+@{
+    ViewBag.Title = "Добавити новину";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Добавити новину</h2>
+
+@using (Html.BeginForm("AddPost", "Home", FormMethod.Post, new { @class = "postform" }))
+{
+    @Html.TextBoxFor(m => m.PostName)
+    @Html.TextAreaFor(m => m.Text, new { @class ="ckeditor", id="editor1", cols = "50", rows = "20" })
+    <input type="submit" value="Добавити" id="addpost"/>
+}

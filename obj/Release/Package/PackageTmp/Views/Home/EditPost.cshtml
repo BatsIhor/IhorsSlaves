@@ -1,0 +1,18 @@
+﻿@model IhorsSlaves.Models.Post
+
+@{
+    ViewBag.Title = "EditPost";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    @using (Html.BeginForm("EditPost", "Home", FormMethod.Post, new { @class = "postform" }))
+    { //ХЕРОВИЙ КОД!!!!!!!
+        @Html.HiddenFor(m => m.PostId)
+        @Html.HiddenFor(m => m.PostDate)
+        @Html.HiddenFor(m => m.PostUser)
+        @Html.TextBoxFor(m => m.PostName)
+        @Html.TextAreaFor(m => m.Text, new { cols = "50", rows = "20"})
+    <input type="submit" value="Змінити" id="addpost"/>
+    }
+</body>
