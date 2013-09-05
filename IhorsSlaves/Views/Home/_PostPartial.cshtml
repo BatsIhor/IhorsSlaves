@@ -4,7 +4,7 @@
     <div class="post">
      <h2>@Html.ActionLink(p.PostName, "FullPost", new { PostId = p.PostId })</h2>
         <div class="text">
-           @p.Text
+           @Html.Raw(p.Text)
             </div>
         <div id="data">
         @p.PostDate
