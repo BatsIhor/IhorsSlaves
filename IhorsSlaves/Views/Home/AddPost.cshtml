@@ -4,12 +4,25 @@
     ViewBag.Title = "Добавити новину";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@section scripts {
+    <!-- sceditor -->
+    <link rel="stylesheet" href="~/Scripts/minified/themes/default.min.css" type="text/css" media="all" />
+    <script type="text/javascript" src="~/Scripts/minified/jquery.sceditor.xhtml.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("textarea").sceditor({
+                plugins: "xhtml",
+                style: "Scripts/minified/jquery.sceditor.default.min.css"
+            });
+        });
+    </script>
+    <!-- sceditor -->
+}
 <h2>Добавити новину</h2>
 
 @using (Html.BeginForm("AddPost", "Home", FormMethod.Post, new { @class = "postform" }))
 {
     @Html.TextBoxFor(m => m.PostName)
-    @Html.TextAreaFor(m => m.Text, new { @class ="ckeditor", id="editor1", cols = "50", rows = "20" })
-    <input type="submit" value="Добавити" id="addpost"/>
+    @Html.TextAreaFor(m => m.Text, new { @class = "ckeditor", id = "editor1", cols = "50", rows = "20" })
+    <input type="submit" value="Добавити" id="addpost" />
 }

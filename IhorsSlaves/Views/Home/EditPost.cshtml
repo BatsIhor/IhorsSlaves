@@ -4,7 +4,20 @@
     ViewBag.Title = "EditPost";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@section scripts {
+    <!-- sceditor -->
+    <link rel="stylesheet" href="~/Scripts/minified/themes/default.min.css" type="text/css" media="all" />
+    <script type="text/javascript" src="~/Scripts/minified/jquery.sceditor.xhtml.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("textarea").sceditor({
+                plugins: "xhtml",
+                style: "Scripts/minified/jquery.sceditor.default.min.css"
+            });
+        });
+    </script>
+    <!-- sceditor -->
+}
 <body>
     @using (Html.BeginForm("EditPost", "Home", FormMethod.Post, new { @class = "postform" }))
     { //ХЕРОВИЙ КОД!!!!!!!
@@ -12,7 +25,7 @@
         @Html.HiddenFor(m => m.PostDate)
         @Html.HiddenFor(m => m.PostUser)
         @Html.TextBoxFor(m => m.PostName)
-        @Html.TextAreaFor(m => m.Text, new { cols = "50", rows = "20"})
-    <input type="submit" value="Змінити" id="addpost"/>
+        @Html.TextAreaFor(m => m.Text, new { cols = "50", rows = "20" })
+        <input type="submit" value="Змінити" id="addpost" />
     }
 </body>
