@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using IhorsSlaves.Models;
 
 namespace IhorsSlaves.Models
 {
@@ -16,11 +12,10 @@ namespace IhorsSlaves.Models
         [ScaffoldColumn(false)]
         public int CommentId { get; set; }
 
-        public string Content { get; set; }
+        public string User { get; set; }
+        public string Email { get; set; }
 
-        [ScaffoldColumn(false)]
-        public int? PostIdPostId { get; set; }
-        public Post Post { get; set; }
+        public string Content { get; set; }
         
         [ScaffoldColumn(false)]
         public DateTime Date { get; set; }

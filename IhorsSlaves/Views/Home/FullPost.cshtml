@@ -1,29 +1,42 @@
 ﻿<head>
-@model IhorsSlaves.Models.Post
+    @using IhorsSlaves.Models
+    @model IhorsSlaves.Models.Post
 
-@{
-    ViewBag.Title = Model.PostName;
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+    @{
+        ViewBag.Title = Model.PostName;
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
 </head>
 
 <body>
     <div class="post">
         <div class="text">
-     <h2>@Model.PostName</h2>
-            </div>
-            <div class="text">
-     @Model.Text
-                </div>
+            <h2>@Model.PostName</h2>
+        </div>
+        <div class="text">
+            @Model.Text
+        </div>
         <div id="data">
-        @Model.PostDate
-        @Html.ActionLink(Model.PostUser, "Manage", "Account")
+            @Model.PostDate
+            @Html.ActionLink(Model.PostUser, "Manage", "Account")
             @if (ViewBag.PostUser)
             {
-                @Html.ActionLink("Змінити", "EditPost", new { PostId = Model.PostId})
-                @Html.ActionLink("Видалити", "DeletePost", new { PostId = Model.PostId})
+                @Html.ActionLink("Змінити", "EditPost", new { PostId = Model.PostId })
+                @Html.ActionLink("Видалити", "DeletePost", new { PostId = Model.PostId })
+            }
+        </div>
+        <div class="comments">
+            <h1>Comments:</h1>
+            @if (Model.Comments != null)
+            {
+                foreach (Comment comment in Model.Comments)
+                {
+                    <div>
+                        <h3>User: @comment.User</h3>
+                        <p>@comment.Content</p>
+                    </div>
+                }
             }
         </div>
     </div>
 </body>
-    

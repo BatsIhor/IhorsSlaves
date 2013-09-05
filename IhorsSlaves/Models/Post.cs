@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace IhorsSlaves.Models
@@ -22,9 +20,11 @@ namespace IhorsSlaves.Models
         [StringLength(2429993, ErrorMessage="Максимальне число симолів 2429993")]
         public string Text { get; set; }
 
-
         public DateTime PostDate { get; set; }
 
         public string PostUser { get; set; }
+
+        public virtual ICollection<Comment> Comments { get; set; }
+        //public List<Comment> Comments { get; set; }
     }
 }
