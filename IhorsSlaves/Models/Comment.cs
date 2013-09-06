@@ -13,6 +13,7 @@ namespace IhorsSlaves.Models
         public int CommentId { get; set; }
 
         public string User { get; set; }
+
         public string Email { get; set; }
 
         public string Content { get; set; }

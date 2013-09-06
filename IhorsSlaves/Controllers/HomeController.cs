@@ -12,6 +12,7 @@ namespace IhorsSlaves.Controllers
     public class HomeController : Controller
     {
         private IPostRepository repository;
+
         public HomeController(IPostRepository postRepository)
         {
             this.repository = postRepository;
@@ -39,6 +40,7 @@ namespace IhorsSlaves.Controllers
         {
             return View();
         }
+
         [HttpPost]
         [Authorize]
         [ValidateInput(false)]
@@ -68,6 +70,7 @@ namespace IhorsSlaves.Controllers
 
             return View(post);
         }
+        
         //Не працює
         [Authorize]
         public ActionResult EditPost(int PostId = 0)
@@ -80,6 +83,7 @@ namespace IhorsSlaves.Controllers
             }
             return View(post);
         }
+        
         [Authorize]
         [HttpPost]
         [ValidateInput(false)]
@@ -93,8 +97,7 @@ namespace IhorsSlaves.Controllers
             }
             else return View(post);
         }
-
-
+        
         [Authorize]
         public ActionResult DeletePost(int postId = 0)
         {

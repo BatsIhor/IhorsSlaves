@@ -9,20 +9,15 @@ namespace IhorsSlaves.Repository
     public class PostRepository : IPostRepository
     {
         private IhorsSlaversDbContext context = new IhorsSlaversDbContext();
+        
         public IEnumerable<Post> GetPosts()
         {
-            Post first = context.Posts.First();
+           // Post first = context.Posts.First();
             
             //first.Comments = new List<Comment>();
             //first.Comments.Add(new Comment(){Content = "comment", Date = DateTime.Now, Email = "m@il", User = "megacool"});
             //context.SaveChanges();
-            var orderByDescending = context.Posts.OrderByDescending(p => p.PostDate).ToList();
             
-            foreach (Post post in orderByDescending)
-            {
-                
-            }
-
             return context.Posts.OrderByDescending(p => p.PostDate);
         }
 

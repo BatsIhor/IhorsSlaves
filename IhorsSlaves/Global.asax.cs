@@ -18,9 +18,7 @@ namespace IhorsSlaves
             AreaRegistration.RegisterAllAreas();
 
             //Database.SetInitializer<IhorsSlaversDbContext>(new  CreateDatabaseIfNotExists<IhorsSlaversDbContext>());
-
-          
-
+            
             DependencyResolver.SetResolver(new NinjectDR());
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
