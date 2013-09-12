@@ -6,6 +6,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using IhorsSlaves.Context;
 using IhorsSlaves.DR;
+using IhorsSlaves.Migrations;
 namespace IhorsSlaves
 {
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
@@ -16,7 +17,6 @@ namespace IhorsSlaves
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-
             //Database.SetInitializer<IhorsSlaversDbContext>(new  CreateDatabaseIfNotExists<IhorsSlaversDbContext>());
             
             DependencyResolver.SetResolver(new NinjectDR());

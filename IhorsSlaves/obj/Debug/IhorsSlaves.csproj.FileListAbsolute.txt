@@ -348,3 +348,7 @@ E:\MyProjects\GitHub\IhorsSlaves\IhorsSlaves\bin\zh-Hant\System.Spatial.resource
 E:\MyProjects\GitHub\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.csprojResolveAssemblyReference.cache
 E:\MyProjects\GitHub\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.dll
 E:\MyProjects\GitHub\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.pdb
+C:\Users\Arsen\Documents\GitHub\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.Migrations.InitialCreate.resources
+C:\Users\Arsen\Documents\GitHub\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.csproj.GenerateResource.Cache
+C:\Users\Arsen\Documents\GitHub\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.Migrations.AddArticleId.resources
+C:\Users\Arsen\Documents\GitHub\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.Migrations.DeletePostIdWithComment.resources

@@ -196,6 +196,19 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HtmlHelpers\PagingHelpers.cs" />
+    <Compile Include="Migrations\201309061953595_InitialCreate.cs" />
+    <Compile Include="Migrations\201309061953595_InitialCreate.Designer.cs">
+      <DependentUpon>201309061953595_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201309071619580_AddArticleId.cs" />
+    <Compile Include="Migrations\201309071619580_AddArticleId.Designer.cs">
+      <DependentUpon>201309071619580_AddArticleId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201309111547592_DeletePostIdWithComment.cs" />
+    <Compile Include="Migrations\201309111547592_DeletePostIdWithComment.Designer.cs">
+      <DependentUpon>201309111547592_DeletePostIdWithComment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\PagingInfo.cs" />
@@ -346,6 +359,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201309061953595_InitialCreate.resx">
+      <DependentUpon>201309061953595_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309071619580_AddArticleId.resx">
+      <DependentUpon>201309071619580_AddArticleId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201309111547592_DeletePostIdWithComment.resx">
+      <DependentUpon>201309111547592_DeletePostIdWithComment.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
