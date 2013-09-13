@@ -12,7 +12,7 @@ namespace IhorsSlaves.Models
         [ScaffoldColumn(false)]
         public int CommentId { get; set; }
 
-        public int ArticleId { get; set; }
+        public int PostId { get; set; }
 
         public string User { get; set; }
 
