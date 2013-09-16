@@ -1,14 +1,20 @@
 ﻿@model IhorsSlaves.Models.ShowPostsOnPages
-@foreach(var p in Model.Posts)
+
+@foreach (var p in Model.Posts)
 {
-    <div class="post">
-     <h2>@Html.ActionLink(p.PostName, "FullPost", new { PostId = p.PostId })</h2>
-        <div class="text">
-           @Html.Raw(p.Text)
-            </div>
-        <div id="data">
-        @p.PostDate
-            @Html.ActionLink(p.PostUser, "Manage", "Account")
-        </div>
+    <div class="container">
+
+        <header>
+            <h2>@Html.ActionLink(p.PostName, "FullPost", new { PostId = p.PostId })</h2>
+        </header>
+        <p>
+            @Html.Raw(p.Text)
+        </p>
+
+        <ul>
+            <li>
+                @p.PostDate @Html.ActionLink(p.PostUser, "Manage", "Account")
+            </li>
+        </ul>
     </div>
 }
