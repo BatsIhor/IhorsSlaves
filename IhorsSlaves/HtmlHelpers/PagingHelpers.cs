@@ -19,7 +19,7 @@ namespace IhorsSlaves.HtmlHelpers
                 tag.InnerHtml = i.ToString();
                 if (i == pagingInfo.CurrentPage)
                     tag.AddCssClass("selected");
-                result.Append(tag.ToString());
+                result.Append(tag);
             }
 
             return MvcHtmlString.Create(result.ToString());

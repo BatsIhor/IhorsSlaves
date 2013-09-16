@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Web.Mvc;
 using Ninject;
-using Ninject.Parameters;
-using Ninject.Syntax;
-using System.Configuration;
 using IhorsSlaves.Repository;
 
 namespace IhorsSlaves.DR

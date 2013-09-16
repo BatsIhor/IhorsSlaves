@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using IhorsSlaves.Models;
-using IhorsSlaves.Context;
 using IhorsSlaves.Repository;
 
 namespace IhorsSlaves.Controllers
@@ -15,13 +12,14 @@ namespace IhorsSlaves.Controllers
 
         public HomeController(IPostRepository postRepository)
         {
-            this.repository = postRepository;
+            repository = postRepository;
         }
 
         int pageSize = 5;
         public ActionResult Index(int page = 1)
         {
-            ViewBag.Message = "Раби работают!";
+            ViewBag.Message = "Сторінка";
+
             ShowPostsOnPages model = new ShowPostsOnPages
             {
                 Posts = repository.GetPosts().Skip((page - 1) * pageSize).Take(pageSize),
@@ -34,7 +32,7 @@ namespace IhorsSlaves.Controllers
             };
             return View(model);
         }
-        
+
         [Authorize]
         public ActionResult AddPost()
         {
@@ -52,12 +50,12 @@ namespace IhorsSlaves.Controllers
                 repository.SaveChanges();
                 return RedirectToAction("Index");
             }
-            else return View(post);
+            return View(post);
         }
 
-        public ActionResult FullPost(int PostId)
+        public ActionResult FullPost(int postId)
         {
-            Post post = repository.FindPostById(PostId);
+            Post post = repository.FindPostById(postId);
             if (post == null)
             {
                 return HttpNotFound();
@@ -71,34 +69,34 @@ namespace IhorsSlaves.Controllers
             vp.Post = post;
             return View(vp);
         }
-        
+
         //Не працює
         [Authorize]
-        public ActionResult EditPost(int PostId = 0)
+        public ActionResult EditPost(int postId = 0)
         {
-
-            Post post = repository.FindPostById(PostId);
+            Post post = repository.FindPostById(postId);
             if (post == null)
             {
                 return HttpNotFound();
             }
             return View(post);
         }
-        
+
         [Authorize]
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult EditPost(Post post)
         {
+            //TODO check for user role and allow to edit post only the same user or admin.
             if (ModelState.IsValid)
             {
                 repository.EditPost(post);
                 repository.SaveChanges();
                 return RedirectToAction("Index");
             }
-            else return View(post);
+            return View(post);
         }
-        
+
         [Authorize]
         public ActionResult DeletePost(int postId = 0)
         {
@@ -136,7 +134,7 @@ namespace IhorsSlaves.Controllers
                 repository.AddComment(vpm.Comment);
                 repository.SaveChanges();
             }
-            return RedirectToAction("FullPost", new { PostId = vpm.Comment.PostId });
+            return RedirectToAction("FullPost", new { vpm.Comment.PostId });
         }
     }
 }

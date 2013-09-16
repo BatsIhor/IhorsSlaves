@@ -1,10 +1,7 @@
+using System.Data.Entity.Migrations;
+
 namespace IhorsSlaves.Migrations
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
-
     internal sealed class Configuration : DbMigrationsConfiguration<IhorsSlaves.Context.IhorsSlaversDbContext>
     {
         public Configuration()
@@ -12,7 +9,7 @@ namespace IhorsSlaves.Migrations
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(IhorsSlaves.Context.IhorsSlaversDbContext context)
+        protected override void Seed(Context.IhorsSlaversDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

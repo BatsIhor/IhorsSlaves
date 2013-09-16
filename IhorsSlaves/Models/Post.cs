@@ -25,6 +25,5 @@ namespace IhorsSlaves.Models
         public string PostUser { get; set; }
 
         public virtual ICollection<Comment> Comments { get; set; }
-        //public List<Comment> Comments { get; set; }
     }
 }

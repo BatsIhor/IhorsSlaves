@@ -1,8 +1,7 @@
+using System.Data.Entity.Migrations;
+
 namespace IhorsSlaves.Migrations
 {
-    using System;
-    using System.Data.Entity.Migrations;
-    
     public partial class AddRequiredToComment : DbMigration
     {
         public override void Up()

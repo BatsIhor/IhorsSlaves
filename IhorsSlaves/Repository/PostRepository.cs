@@ -12,12 +12,6 @@ namespace IhorsSlaves.Repository
         
         public IEnumerable<Post> GetPosts()
         {
-           // Post first = context.Posts.First();
-            
-            //first.Comments = new List<Comment>();
-            //first.Comments.Add(new Comment(){Content = "comment", Date = DateTime.Now, Email = "m@il", User = "megacool"});
-            //context.SaveChanges();
-            
             return context.Posts.OrderByDescending(p => p.PostDate);
         }
 

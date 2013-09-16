@@ -173,7 +173,6 @@ D:\Git\IhorsSlaves\IhorsSlaves\bin\zh-Hans\System.Spatial.resources.dll
 D:\Git\IhorsSlaves\IhorsSlaves\bin\zh-Hant\System.Spatial.resources.dll
 D:\Git\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.dll
 D:\Git\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.pdb
-D:\Git\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.csprojResolveAssemblyReference.cache
 C:\Users\Arsen\Documents\GitHub\IhorsSlaves\IhorsSlaves\bin\IhorsSlaves.dll
 C:\Users\Arsen\Documents\GitHub\IhorsSlaves\IhorsSlaves\bin\IhorsSlaves.pdb
 C:\Users\Arsen\Documents\GitHub\IhorsSlaves\IhorsSlaves\bin\Antlr3.Runtime.dll
@@ -348,9 +347,8 @@ E:\MyProjects\GitHub\IhorsSlaves\IhorsSlaves\bin\zh-Hant\System.Spatial.resource
 E:\MyProjects\GitHub\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.csprojResolveAssemblyReference.cache
 E:\MyProjects\GitHub\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.dll
 E:\MyProjects\GitHub\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.pdb
-D:\Git\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.Migrations.InitialCreate.resources
-D:\Git\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.Migrations.AddArticleId.resources
-D:\Git\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.Migrations.DeletePostIdWithComment.resources
 D:\Git\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.csproj.GenerateResource.Cache
 C:\Users\Arsen\Documents\GitHub\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.Migrations.AddRequiredToComment.resources
 C:\Users\Arsen\Documents\GitHub\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.csproj.GenerateResource.Cache
+D:\Git\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.Migrations.AddRequiredToComment.resources
+D:\Git\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.csprojResolveAssemblyReference.cache
