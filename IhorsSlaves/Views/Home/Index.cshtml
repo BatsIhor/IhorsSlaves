@@ -1,21 +1,26 @@
 ﻿@model IhorsSlaves.Models.ShowPostsOnPages
 @{
-    ViewBag.Title = "Головна";
+    ViewBag.Title = "Main";
+}
+
+@section scripts {
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600" rel="stylesheet" type="text/css" />
+    <link href="../../content/skel-noscript.css" rel="stylesheet" type="text/css" />
+    <link href="../../content/style.css" rel="stylesheet" type="text/css" />
+    <link href="../../content/style-n1.css" rel="stylesheet" type="text/css" />
 }
 
 @section featured {
-    <section class="featured">
-        <div class="content-wrapper">
-            <hgroup class="title">
-                <h1>@ViewBag.Title.</h1>
-                <h2>@ViewBag.Message</h2>
-            </hgroup>
-        </div>
-    </section>
+    <div class="content-wrapper">
+        <hgroup class="title">
+            <h1>@ViewBag.Title</h1>
+            <h2>@ViewBag.Message</h2>
+        </hgroup>
+    </div>
 }
 
 @Html.Partial("_PostPartial")
-<div class ="pager">
-    @Html.PageLinks(Model.PagingInfo, x => Url.Action("Index", new {page = x}))
+<div class="pager">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("Index", new { page = x }))
 </div>
 

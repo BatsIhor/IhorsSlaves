@@ -352,3 +352,7 @@ C:\Users\Arsen\Documents\GitHub\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.Mi
 C:\Users\Arsen\Documents\GitHub\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.csproj.GenerateResource.Cache
 D:\Git\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.Migrations.AddRequiredToComment.resources
 D:\Git\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.csprojResolveAssemblyReference.cache
+D:\Git\IhorsSlaves\IhorsSlaves\bin\Content\skel-noscript.css
+D:\Git\IhorsSlaves\IhorsSlaves\bin\Content\style-n1.css
+D:\Git\IhorsSlaves\IhorsSlaves\bin\Content\style.css
+D:\Git\IhorsSlaves\IhorsSlaves\bin\Content\Site.css
