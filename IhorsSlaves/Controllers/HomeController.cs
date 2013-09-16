@@ -55,20 +55,21 @@ namespace IhorsSlaves.Controllers
             else return View(post);
         }
 
-        public ActionResult FullPost(int PostId = 0)
+        public ActionResult FullPost(int PostId)
         {
             Post post = repository.FindPostById(PostId);
             if (post == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.PostUser = false; 
+            ViewBag.PostUser = false;
             if (User.Identity.Name == post.PostUser)
             {
                 ViewBag.PostUser = true;
             }
-
-            return View(post);
+            ViewPostModel vp = new ViewPostModel();
+            vp.Post = post;
+            return View(vp);
         }
         
         //Не працює
@@ -118,6 +119,24 @@ namespace IhorsSlaves.Controllers
         public ActionResult Contact()
         {
             return View();
+        }
+
+        [ValidateInput(false)]
+        public ActionResult AddComment(ViewPostModel vpm)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                vpm.Comment.Email = "RegisteredUser@" + User.Identity.Name + ".com";
+                vpm.Comment.User = User.Identity.Name;
+            }
+            vpm.Comment.Date = DateTime.Now;
+
+            if (ModelState.IsValid)
+            {
+                repository.AddComment(vpm.Comment);
+                repository.SaveChanges();
+            }
+            return RedirectToAction("FullPost", new { PostId = vpm.Comment.PostId });
         }
     }
 }

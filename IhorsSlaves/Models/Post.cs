@@ -12,7 +12,7 @@ namespace IhorsSlaves.Models
         [ScaffoldColumn(false)]
         public int PostId { get; set; }
 
-        [Required(ErrorMessage = "Поле повинно біти заповнене")]
+        [Required(ErrorMessage = "Поле повинно бути заповнене")]
         [StringLength(80, ErrorMessage="Максимальна довжина 80 символів")]
         public string PostName { get; set; }
 

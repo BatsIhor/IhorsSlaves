@@ -48,5 +48,10 @@ namespace IhorsSlaves.Repository
         {
             context.Posts.Remove(post);
         }
+
+        public void AddComment(Comment comment)
+        {
+            context.Comments.Add(comment);
+        }
     }
 }

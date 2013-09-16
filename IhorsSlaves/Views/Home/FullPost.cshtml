@@ -1,42 +1,79 @@
-﻿<head>
+﻿
     @using IhorsSlaves.Models
-    @model IhorsSlaves.Models.Post
+    @model IhorsSlaves.Models.ViewPostModel
 
     @{
-        ViewBag.Title = Model.PostName;
+        ViewBag.Title = Model.Post.PostName;
         Layout = "~/Views/Shared/_Layout.cshtml";
     }
-</head>
+    @section scripts {
+    <!-- sceditor -->
+    <link rel="stylesheet" href="~/Scripts/minified/themes/default.min.css" type="text/css" media="all" />
+    <script type="text/javascript" src="~/Scripts/minified/jquery.sceditor.xhtml.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("textarea").sceditor({
+                plugins: "xhtml",
+                style: "Scripts/minified/jquery.sceditor.default.min.css"
+            });
+        });
+    </script>
+    <!-- sceditor -->
+    }
 
 <body>
     <div class="post">
         <div class="text">
-            <h2>@Model.PostName</h2>
+            <h2>@Model.Post.PostName</h2>
         </div>
         <div class="text">
-            @Html.Raw(Model.Text)
+            @Html.Raw(Model.Post.Text)
         </div>
         <div id="data">
-            @Model.PostDate
-            @Html.ActionLink(Model.PostUser, "Manage", "Account")
+            @Model.Post.PostDate
+            @Html.ActionLink(Model.Post.PostUser, "Manage", "Account")
             @if (ViewBag.PostUser)
             {
-                @Html.ActionLink("Змінити", "EditPost", new { PostId = Model.PostId })
-                @Html.ActionLink("Видалити", "DeletePost", new { PostId = Model.PostId })
+                @Html.ActionLink("Змінити", "EditPost", new { PostId = Model.Post.PostId })
+                @Html.ActionLink("Видалити", "DeletePost", new { PostId = Model.Post.PostId })
             }
         </div>
         <div class="comments">
-            <h1>Comments:</h1>
-            @if (Model.Comments != null)
+            <h1>Коментарі:</h1>
+            @if (Model.Post.Comments != null)
             {
-                foreach (Comment comment in Model.Comments)
+                foreach (Comment comment in Model.Post.Comments)
                 {
                 <div>
                     <h3>User: @comment.User</h3>
-                    <p>@comment.Content</p>
+                    <p>@Html.Raw(comment.Content)</p>
                 </div>
                 }
             }
+
+            <div>
+                <h2>Добавити коментар:</h2>
+                @using (Html.BeginForm("AddComment", "Home", FormMethod.Post))
+                {
+                    @Html.TextAreaFor(m => m.Comment.Content, new { @Class = "ckeditor", @Id = "editor1", @Cols = 20, @Rows = 10});
+                    @Html.ValidationMessageFor(m => m.Comment.Content);
+                    @Html.HiddenFor(m => m.Comment.PostId, new { @Value = Model.Post.PostId});
+                    if (User.Identity.IsAuthenticated)
+                    {
+                        @Html.HiddenFor(m => m.Comment.Email, new{@Value = "jhustFor@valid.com"}); 
+                        @Html.HiddenFor(m => m.Comment.User, new {@Value = "justforvalid"}); 
+                    }
+                    else
+                    {
+                       <h3>Користувач:</h3> @Html.TextBoxFor(m => m.Comment.User);
+                    @Html.ValidationMessageFor(m => m.Comment.User);
+                       <h3>Email:</h3> @Html.TextBoxFor(m => m.Comment.Email);
+                    @Html.ValidationMessageFor(m => m.Comment.Email);
+                    }
+                    
+                    <input type="submit" value ="Добавити">
+                }
+            </div>
         </div>
     </div>
 </body>

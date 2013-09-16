@@ -20,5 +20,6 @@ namespace IhorsSlaves.Repository
 
        void DeletePost(Post post);
 
+       void AddComment(Comment comment);
     }
 }

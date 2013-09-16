@@ -196,17 +196,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HtmlHelpers\PagingHelpers.cs" />
-    <Compile Include="Migrations\201309061953595_InitialCreate.cs" />
-    <Compile Include="Migrations\201309061953595_InitialCreate.Designer.cs">
-      <DependentUpon>201309061953595_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201309071619580_AddArticleId.cs" />
-    <Compile Include="Migrations\201309071619580_AddArticleId.Designer.cs">
-      <DependentUpon>201309071619580_AddArticleId.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201309111547592_DeletePostIdWithComment.cs" />
-    <Compile Include="Migrations\201309111547592_DeletePostIdWithComment.Designer.cs">
-      <DependentUpon>201309111547592_DeletePostIdWithComment.cs</DependentUpon>
+    <Compile Include="Migrations\201309141343024_AddRequiredToComment.cs" />
+    <Compile Include="Migrations\201309141343024_AddRequiredToComment.Designer.cs">
+      <DependentUpon>201309141343024_AddRequiredToComment.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -214,6 +206,7 @@
     <Compile Include="Models\PagingInfo.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\ShowPostsOnPages.cs" />
+    <Compile Include="Models\ViewPostModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IPostRepository.cs" />
     <Compile Include="Repository\PostRepository.cs" />
@@ -361,14 +354,8 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201309061953595_InitialCreate.resx">
-      <DependentUpon>201309061953595_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201309071619580_AddArticleId.resx">
-      <DependentUpon>201309071619580_AddArticleId.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201309111547592_DeletePostIdWithComment.resx">
-      <DependentUpon>201309111547592_DeletePostIdWithComment.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201309141343024_AddRequiredToComment.resx">
+      <DependentUpon>201309141343024_AddRequiredToComment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
