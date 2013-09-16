@@ -120,6 +120,7 @@ namespace IhorsSlaves.Controllers
         }
 
         [ValidateInput(false)]
+        [HttpPost]
         public ActionResult AddComment(ViewPostModel vpm)
         {
             if (User.Identity.IsAuthenticated)
