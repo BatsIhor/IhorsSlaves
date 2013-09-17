@@ -355,4 +355,3 @@ D:\Git\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.csprojResolveAssemblyRefere
 D:\Git\IhorsSlaves\IhorsSlaves\bin\Content\skel-noscript.css
 D:\Git\IhorsSlaves\IhorsSlaves\bin\Content\style-n1.css
 D:\Git\IhorsSlaves\IhorsSlaves\bin\Content\style.css
-D:\Git\IhorsSlaves\IhorsSlaves\bin\Content\Site.css

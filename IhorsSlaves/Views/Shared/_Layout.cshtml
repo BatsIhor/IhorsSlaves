@@ -9,38 +9,44 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts", required: false)
+
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600" rel="stylesheet" type="text/css" />
+    <link href="../../content/skel-noscript.css" rel="stylesheet" type="text/css" />
+    <link href="../../content/style.css" rel="stylesheet" type="text/css" />
+    <link href="../../content/style-n1.css" rel="stylesheet" type="text/css" />
 </head>
 <body class="homepage">
     <div id="header-wrapper">
         <!-- Header -->
         <div id="header" class="container">
-
             <!-- Nav -->
             <nav id="nav">
-                <p class="site-title">@Html.ActionLink("Home", "Index", "Home")</p>
-                <section id="login">
-                    @Html.Partial("_LoginPartial")
-                </section>
+              @*  <p class="site-title">@Html.ActionLink("Home", "Index", "Home")</p>*@
+
                 <ul>
                     <li>@Html.ActionLink("Main", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contacts", "Contact", "Home")</li>
-
                 </ul>
+                <section id="login">
+                    @Html.Partial("_LoginPartial")
+                </section>
             </nav>
+
         </div>
+
     </div>
 
     <div class="wrapper">
         <div class="container">
             <div class="row">
                 @RenderSection("featured", required: false)
-                 
+
             </div>
         </div>
     </div>
 
-   @RenderBody()
+    @RenderBody()
 
     <div id="footer-wrapper">
 
