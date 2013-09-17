@@ -55,18 +55,18 @@ namespace IhorsSlaves.Controllers
 
         public ActionResult FullPost(int postId)
         {
-            Post post = repository.FindPostById(postId);
-            if (post == null)
+            ViewPostModel vp = new ViewPostModel();
+            vp.Post = repository.FindPostById(postId);
+            if (vp.Post == null)
             {
                 return HttpNotFound();
             }
             ViewBag.PostUser = false;
-            if (User.Identity.Name == post.PostUser)
+            if (User.Identity.Name == vp.Post.PostUser)
             {
                 ViewBag.PostUser = true;
             }
-            ViewPostModel vp = new ViewPostModel();
-            vp.Post = post;
+            
             return View(vp);
         }
 
@@ -120,6 +120,7 @@ namespace IhorsSlaves.Controllers
         }
 
         [ValidateInput(false)]
+        [HttpPost]
         public ActionResult AddComment(ViewPostModel vpm)
         {
             if (User.Identity.IsAuthenticated)
