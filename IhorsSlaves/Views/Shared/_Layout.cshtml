@@ -32,22 +32,22 @@
                     @Html.Partial("_LoginPartial")
                 </section>
             </nav>
-
         </div>
-
     </div>
 
     <div class="wrapper">
         <div class="container">
             <div class="row">
                 @RenderSection("featured", required: false)
-
             </div>
         </div>
     </div>
-
+    
+    <div class="wrapper">
+        <div class="container">
     @RenderBody()
-
+                  </div>
+        </div>
     <div id="footer-wrapper">
 
         <div class="pager">
