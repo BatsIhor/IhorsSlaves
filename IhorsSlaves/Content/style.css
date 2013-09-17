@@ -455,6 +455,17 @@
 			{
 			}
 
+/*Comments*/
+.comment {
+    border-top: solid 1px #d2d7dc;
+}
+.comments {
+    margin-top: 50px;
+    border-top: solid 1px #c2c7cc;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
 /*********************************************************************************/
 /* Icons                                                                         */
 /* Powered by Font Awesome by Dave Gandy | http://fontawesome.io                 */

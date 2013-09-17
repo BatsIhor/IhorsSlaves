@@ -28,43 +28,83 @@
         }
     </div>
     <div class="comments">
-        <h1>Comments:</h1>
+        <h2>Comments:</h2>
         @if (Model.Post.Comments != null)
         {
             foreach (Comment comment in Model.Post.Comments)
             {
-            <div>
-                <h3>User: @comment.User</h3>
+            <div class="comment">
+                <h3>@comment.User</h3> 
                 <p>@Html.Raw(comment.Content)</p>
+                <h5>@Html.Raw(comment.Date)</h5>
             </div>
             }
         }
 
         <div>
-            <h2>Добавити коментар:</h2>
-            @using (Html.BeginForm("AddComment", "Home", FormMethod.Post))
-            {
-                @Html.TextAreaFor(m => m.Comment.Content, new { @Class = "ckeditor", @Id = "editor1", @Cols = 20, @Rows = 10 });
-                @Html.ValidationMessageFor(m => m.Comment.Content);
-                @Html.HiddenFor(m => m.Comment.PostId, new { @Value = Model.Post.PostId });
+            <div id="footer" class="container">
+                <header class="major">
+                    <h2>Have something to say?</h2>
+                    <span>Comment!</span>
+                </header>
+                <div class="row">
+                    <section class="6u">
+                        @using (Html.BeginForm("AddComment", "Home", FormMethod.Post))
+                        {
+                            @Html.HiddenFor(m => m.Comment.PostId, new { @Value = Model.Post.PostId });
 
-                                                                                          if (User.Identity.IsAuthenticated)
-                                                                                          {
-                @Html.HiddenFor(m => m.Comment.Email, new { @Value = "jhustFor@valid.com" }); 
-                @Html.HiddenFor(m => m.Comment.User, new { @Value = "justforvalid" });
-                                                                                          }
-                                                                                          else
-                                                                                          {
-                <h3>User name:</h3> @Html.TextBoxFor(m => m.Comment.User);
-                @Html.ValidationMessageFor(m => m.Comment.User);
-                <h3>Email:</h3> @Html.TextBoxFor(m => m.Comment.Email);
-                @Html.ValidationMessageFor(m => m.Comment.Email);
-                                                                                          }
-                    
-                <input type="submit" value="Add" />
-            }
+
+                                                                                                      if (User.Identity.IsAuthenticated)
+                                                                                                      {
+                            @Html.HiddenFor(m => m.Comment.Email, new { @Value = "jhustFor@valid.com" })
+                            @Html.HiddenFor(m => m.Comment.User, new { @Value = "justforvalid" })
+                                                                                                      }
+                                                                                                      else
+                                                                                                      {
+                            <div class="row half">
+                                <div class="6u">
+                                    @Html.TextBoxFor(m => m.Comment.User)
+                                    @Html.ValidationMessageFor(m => m.Comment.User)
+                                </div>
+                                <div class="6u">
+                                    @Html.TextBoxFor(m => m.Comment.Email)
+                                    @Html.ValidationMessageFor(m => m.Comment.Email)
+                                </div>
+                            </div>}
+                              
+                            <div class="row half">
+                                <div class="12u">
+                                    @Html.ValidationMessageFor(m => m.Comment.Content)
+                                    @Html.TextAreaFor(m => m.Comment.Content, new { placeholder = "Message", name = "message" })
+                                </div>
+                            </div>
+
+                            <div class="row half">
+                                <div class="12u">
+                                    <ul class="actions">
+                                        <li>
+                                            <input type="submit" value="Add" class="button" /></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        }
+                    </section>
+                    <section class="6u">
+                        <div class="row no-collapse-1">
+                            <ul class="divided icons 6u">
+                                <li class="icon icon-twitter"><a href="#"><span class="extra">twitter.com/</span>untitled</a></li>
+                                <li class="icon icon-facebook"><a href="#"><span class="extra">facebook.com/</span>untitled</a></li>
+                                <li class="icon icon-dribbble"><a href="#"><span class="extra">dribbble.com/</span>untitled</a></li>
+                            </ul>
+                            <ul class="divided icons 6u">
+                                <li class="icon icon-linkedin"><a href="#"><span class="extra">linkedin.com/</span>untitled</a></li>
+                                <li class="icon icon-youtube"><a href="#"><span class="extra">youtube.com/</span>untitled</a></li>
+                                <li class="icon icon-pinterest"><a href="#"><span class="extra">pinterest.com/</span>untitled</a></li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
         </div>
-
-
     </div>
 </body>
