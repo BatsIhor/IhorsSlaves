@@ -13,96 +13,9 @@
 }
 
 <div class="wrapper">
-    @Html.Partial("_PostPartial")
+    <div class="container">
+        @Html.Partial("_PostPartial")
+    </div>
 </div>
 
 @Html.PageLinks(Model.PagingInfo, x => Url.Action("Index", new { page = x }))
-
-<div class="wrapper">
-    <div class="container">
-        <div class="row">
-            <section class="6u feature">
-                <div class="image-wrapper first">
-                    <a class="image full first" href="">
-                        <img alt="" src="images/pic01.jpg" /></a>
-                </div>
-                <header>
-                    <h2>Semper magna neque vel<br />
-                        adipiscing curabitur</h2>
-                </header>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur vel 
-							sem sit dolor neque semper magna. Lorem ipsum dolor sit amet consectetur et sed 
-							adipiscing elit. Curabitur vel sem sit.
-                </p>
-                <ul class="actions">
-                    <li><a class="button" href="#">Elevate my awareness</a></li>
-                </ul>
-            </section>
-            <section class="6u feature">
-                <div class="image-wrapper">
-                    <a class="image full" href="">
-                        <img alt="" src="images/pic02.jpg" /></a>
-                </div>
-                <header>
-                    <h2>Amet lorem ipsum dolor<br />
-                        sit consequat magna</h2>
-                </header>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur vel 
-							sem sit dolor neque semper magna. Lorem ipsum dolor sit amet consectetur et sed 
-							adipiscing elit. Curabitur vel sem sit.
-                </p>
-                <ul class="actions">
-                    <li><a class="button" href="#">Elevate my awareness</a></li>
-                </ul>
-            </section>
-        </div>
-    </div>
-
-</div>
-<div class="wrapper">
-
-    <section class="container">
-        <header class="major">
-            <h2>Sed magna consequat lorem curabitur tempus</h2>
-            <span>Elit aliquam vulputate egestas euismod nunc semper vehicula lorem blandit</span>
-        </header>
-        <div class="row features">
-            <section class="4u feature">
-                <div class="image-wrapper first">
-                    <a href="" class="image full">
-                        <img src="images/pic03.jpg" alt="" /></a>
-                </div>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur 
-							vel sem sit dolor neque semper magna lorem ipsum.
-                </p>
-            </section>
-            <section class="4u feature">
-                <div class="image-wrapper">
-                    <a href="" class="image full">
-                        <img src="images/pic04.jpg" alt="" /></a>
-                </div>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur 
-							vel sem sit dolor neque semper magna lorem ipsum.
-                </p>
-            </section>
-            <section class="4u feature">
-                <div class="image-wrapper">
-                    <a href="" class="image full">
-                        <img src="images/pic05.jpg" alt="" /></a>
-                </div>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur 
-							vel sem sit dolor neque semper magna lorem ipsum.
-                </p>
-            </section>
-        </div>
-        <ul class="actions major">
-            <li><a href="#" class="button">Elevate my awareness</a></li>
-        </ul>
-    </section>
-
-</div>

@@ -2,19 +2,16 @@
 
 @foreach (var p in Model.Posts)
 {
-    <div class="container">
+    <header>
+        <h2>@Html.ActionLink(p.PostName, "FullPost", new { PostId = p.PostId })</h2>
+    </header>
+    <p>
+        @Html.Raw(p.Text)
+    </p>
 
-        <header>
-            <h2>@Html.ActionLink(p.PostName, "FullPost", new { PostId = p.PostId })</h2>
-        </header>
-        <p>
-            @Html.Raw(p.Text)
-        </p>
-
-        <ul>
-            <li>
-                @p.PostDate @Html.ActionLink(p.PostUser, "Manage", "Account")
-            </li>
-        </ul>
-    </div>
+    <ul>
+        <li>
+            @p.PostDate @Html.ActionLink(p.PostUser, "Manage", "Account")
+        </li>
+    </ul>
 }
