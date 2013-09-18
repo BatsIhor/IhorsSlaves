@@ -11,7 +11,9 @@
 
     <ul>
         <li>
-            @p.PostDate @Html.ActionLink(p.PostUser, "Manage", "Account")
+            @p.PostDate 
+            @Html.Label("Comments: ") @p.Comments.Count
+            @Html.ActionLink(p.PostUser, "Manage", "Account")
         </li>
     </ul>
 }

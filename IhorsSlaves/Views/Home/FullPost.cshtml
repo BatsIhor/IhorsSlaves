@@ -20,12 +20,14 @@
 
     <div id="data">
         @Model.Post.PostDate
+        @Html.LabelFor(m => m.Post.Comments): @Model.Post.Comments.Count
         @Html.ActionLink(Model.Post.PostUser, "Manage", "Account")
         @if (ViewBag.PostUser)
         {
-            @Html.ActionLink("Edit", "EditPost", new { PostId = Model.Post.PostId })
+            @Html.ActionLink("Edit", "EditPost", new { PostId = Model.Post.PostId }) 
             @Html.ActionLink("Delete", "DeletePost", new { PostId = Model.Post.PostId })
         }
+        
     </div>
     <div class="comments">
         <h2>Comments:</h2>
