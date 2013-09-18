@@ -5,7 +5,8 @@
 
         @if (User.Identity.IsAuthenticated)
         {
-            @Html.ActionLink("ADD NEWS", "AddPost", "Home")
+            @Html.ActionLink("Add news", "AddPost", "Home")
+            @Html.ActionLink("Add album", "Index", "Album")
         }
 
         @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))

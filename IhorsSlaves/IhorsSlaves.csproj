@@ -189,6 +189,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Context\IhorsSlaversDBContext.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AlbumController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DR\NinjectDR.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -203,7 +204,9 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\ImagesAlbum.cs" />
     <Compile Include="Models\PagingInfo.cs" />
+    <Compile Include="Models\Image.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\ShowPostsOnPages.cs" />
     <Compile Include="Models\ViewPostModel.cs" />
@@ -375,6 +378,11 @@
     <Content Include="Scripts\minified\themes\monocons\monocons.eot" />
     <Content Include="Scripts\minified\themes\monocons\monocons.ttf" />
     <Content Include="Views\Shared\ContactUs.cshtml" />
+    <Content Include="Views\Album\Index.cshtml" />
+    <Content Include="Views\Album\Details.cshtml" />
+    <Content Include="Views\Album\Create.cshtml" />
+    <Content Include="Views\Album\Edit.cshtml" />
+    <Content Include="Views\Album\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

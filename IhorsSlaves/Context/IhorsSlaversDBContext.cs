@@ -7,5 +7,7 @@ namespace IhorsSlaves.Context
     {
             public DbSet<Post> Posts { get; set; }
             public DbSet<Comment> Comments { get; set; }
+            public DbSet<ImagesAlbum> ImagesAlbum { get; set; }
+            public DbSet<Image> Images { get; set; }
     }
 }

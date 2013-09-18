@@ -448,7 +448,6 @@ D:\Git\IhorsSlaves\IhorsSlaves\bin\ko\System.Spatial.resources.dll
 D:\Git\IhorsSlaves\IhorsSlaves\bin\ru\System.Spatial.resources.dll
 D:\Git\IhorsSlaves\IhorsSlaves\bin\zh-Hans\System.Spatial.resources.dll
 D:\Git\IhorsSlaves\IhorsSlaves\bin\zh-Hant\System.Spatial.resources.dll
-D:\Git\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.csprojResolveAssemblyReference.cache
 D:\Git\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.Migrations.AddRequiredToComment.resources
 D:\Git\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.csproj.GenerateResource.Cache
 D:\Git\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.dll

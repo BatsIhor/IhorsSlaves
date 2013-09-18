@@ -1,8 +1,10 @@
-﻿using System.Web;
+﻿using System.Data.Entity;
+using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using IhorsSlaves.Context;
 using IhorsSlaves.DR;
 
 namespace IhorsSlaves
@@ -14,18 +16,17 @@ namespace IhorsSlaves
     {
         protected void Application_Start()
         {
+            //This string will recreate DB if shceme has changed.
+            //Also you have to close connection to db in Server Explorer window.
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<IhorsSlaversDbContext>());
+
             AreaRegistration.RegisterAllAreas();
-            //Database.SetInitializer<IhorsSlaversDbContext>(new  CreateDatabaseIfNotExists<IhorsSlaversDbContext>());
-            
             DependencyResolver.SetResolver(new NinjectDR());
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
-            //IhorsSlaversDbContext context = new IhorsSlaversDbContext();
-            //context.Database.CreateIfNotExists();
-            //context.Database.Initialize(true);
         }
     }
 }
