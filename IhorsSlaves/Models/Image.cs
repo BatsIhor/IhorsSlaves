@@ -12,6 +12,8 @@ namespace IhorsSlaves.Models
         [ScaffoldColumn(false)]
         public int ImageId { get; set; }
 
+        public int AlbumId { get; set; }
+
         public string Tag { get; set; }
 
         public string ImageURL { get; set; }

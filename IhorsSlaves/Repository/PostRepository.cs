@@ -9,7 +9,7 @@ namespace IhorsSlaves.Repository
     public class PostRepository : IPostRepository
     {
         private IhorsSlaversDbContext context = new IhorsSlaversDbContext();
-        
+
         public IEnumerable<Post> GetPosts()
         {
             return context.Posts.OrderByDescending(p => p.PostDate);
@@ -46,6 +46,11 @@ namespace IhorsSlaves.Repository
         public void AddComment(Comment comment)
         {
             context.Comments.Add(comment);
+        }
+
+        public void AddImage(Image image)
+        {
+            context.Images.Add(image);
         }
     }
 }

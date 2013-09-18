@@ -6,20 +6,22 @@ using IhorsSlaves.Models;
 
 namespace IhorsSlaves.Repository
 {
-   public interface IPostRepository
+    public interface IPostRepository
     {
-       void SaveChanges();
+        void SaveChanges();
 
-       IEnumerable<Post> GetPosts();
+        IEnumerable<Post> GetPosts();
 
-       void AddPost(Post addform, string user, DateTime date);
+        void AddPost(Post addform, string user, DateTime date);
 
-       Post FindPostById(int id);
-       
-       void EditPost(Post post);
+        Post FindPostById(int id);
 
-       void DeletePost(Post post);
+        void EditPost(Post post);
 
-       void AddComment(Comment comment);
+        void DeletePost(Post post);
+
+        void AddComment(Comment comment);
+
+        void AddImage(Image image);
     }
 }

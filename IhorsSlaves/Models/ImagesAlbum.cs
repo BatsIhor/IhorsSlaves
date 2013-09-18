@@ -10,7 +10,7 @@ namespace IhorsSlaves.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [ScaffoldColumn(false)]
-        public int PostId { get; set; }
+        public int AlbumId { get; set; }
 
         public string AlbumName { get; set; }
 

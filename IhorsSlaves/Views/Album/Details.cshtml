@@ -1,4 +1,5 @@
-﻿@model IhorsSlaves.Models.ImagesAlbum
+﻿@using IhorsSlaves.Models
+@model IhorsSlaves.Models.ImagesAlbum
 
 @{
     ViewBag.Title = "Details";
@@ -10,13 +11,74 @@
     <legend>ImagesAlbum</legend>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.AlbumName)
+        @Html.DisplayNameFor(model => model.AlbumName)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.AlbumName)
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.PostId }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AlbumId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+<div class="comments">
+    <h2>Comments:</h2>
+    @if (Model.Images != null)
+    {
+        foreach (Image image in Model.Images)
+        {
+        <div class="comment">
+            <h3>@image.User</h3>
+            <p>@Html.Raw(image.ImageURL)</p>
+            <h5>@Html.Raw(image.UploadDate)</h5>
+        </div>
+        }
+    }
+
+    <div>
+        <div id="footer" class="container">
+            <header class="major">
+                <h2>Have something to say?</h2>
+                <span>Comment!</span>
+            </header>
+            <div class="row">
+                <section class="6u">
+                    @using (Html.BeginForm("AddImage", "Album", FormMethod.Post))
+                    {
+                        @Html.HiddenFor(m => m.AlbumId, new { @Value = Model.AlbumId })
+                        
+                        <div class="row half">
+                            <div class="6u">
+                                @Html.TextBox("ImageURL")
+                                @Html.TextBox("Tag")
+                            </div>
+                        </div>
+                        <div class="row half">
+                            <div class="12u">
+                                <ul class="actions">
+                                    <li>
+                                        <input type="submit" value="Add" class="button" /></li>
+                                </ul>
+                            </div>
+                        </div>
+                    }
+                </section>
+                <section class="6u">
+                    <div class="row no-collapse-1">
+                        <ul class="divided icons 6u">
+                            <li class="icon icon-twitter"><a href="#"><span class="extra">twitter.com/</span>untitled</a></li>
+                            <li class="icon icon-facebook"><a href="#"><span class="extra">facebook.com/</span>untitled</a></li>
+                            <li class="icon icon-dribbble"><a href="#"><span class="extra">dribbble.com/</span>untitled</a></li>
+                        </ul>
+                        <ul class="divided icons 6u">
+                            <li class="icon icon-linkedin"><a href="#"><span class="extra">linkedin.com/</span>untitled</a></li>
+                            <li class="icon icon-youtube"><a href="#"><span class="extra">youtube.com/</span>untitled</a></li>
+                            <li class="icon icon-pinterest"><a href="#"><span class="extra">pinterest.com/</span>untitled</a></li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>

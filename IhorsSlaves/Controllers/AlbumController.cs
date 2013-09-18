@@ -1,29 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using IhorsSlaves.Models;
 using IhorsSlaves.Context;
+using IhorsSlaves.Repository;
 
 namespace IhorsSlaves.Controllers
 {
     public class AlbumController : Controller
     {
-        private IhorsSlaversDbContext db = new IhorsSlaversDbContext();
+        private IPostRepository repository;
 
-        //
-        // GET: /Album/
+        public AlbumController(IPostRepository postRepository)
+        {
+            repository = postRepository;
+        }
+
+        private IhorsSlaversDbContext db = new IhorsSlaversDbContext();
 
         public ActionResult Index()
         {
             return View(db.ImagesAlbum.ToList());
         }
-
-        //
-        // GET: /Album/Details/5
 
         public ActionResult Details(int id = 0)
         {
@@ -35,16 +34,10 @@ namespace IhorsSlaves.Controllers
             return View(imagesalbum);
         }
 
-        //
-        // GET: /Album/Create
-
         public ActionResult Create()
         {
             return View();
         }
-
-        //
-        // POST: /Album/Create
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -60,8 +53,24 @@ namespace IhorsSlaves.Controllers
             return View(imagesalbum);
         }
 
-        //
-        // GET: /Album/Edit/5
+        [HttpPost]
+        [Authorize]
+        [ValidateInput(false)]
+        public ActionResult AddImage(Image image)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                image.User = User.Identity.Name;
+            }
+            image.UploadDate = DateTime.Now;
+
+            if (ModelState.IsValid)
+            {
+                repository.AddImage(image);
+                repository.SaveChanges();
+            }
+            return RedirectToAction("Index");
+        }
 
         public ActionResult Edit(int id = 0)
         {
@@ -72,9 +81,6 @@ namespace IhorsSlaves.Controllers
             }
             return View(imagesalbum);
         }
-
-        //
-        // POST: /Album/Edit/5
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -89,9 +95,6 @@ namespace IhorsSlaves.Controllers
             return View(imagesalbum);
         }
 
-        //
-        // GET: /Album/Delete/5
-
         public ActionResult Delete(int id = 0)
         {
             ImagesAlbum imagesalbum = db.ImagesAlbum.Find(id);
@@ -101,9 +104,6 @@ namespace IhorsSlaves.Controllers
             }
             return View(imagesalbum);
         }
-
-        //
-        // POST: /Album/Delete/5
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
