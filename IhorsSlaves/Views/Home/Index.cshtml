@@ -4,23 +4,14 @@
 }
 
 @section featured {
-    <div class="content-wrapper">
-        <hgroup class="title">
-            <h1>@ViewBag.Title</h1>
-            <h2>@ViewBag.Message</h2>
-        </hgroup>
-    </div>
+
+    <h1>@ViewBag.Title</h1>
+    <h2>@ViewBag.Message</h2>
 }
 
-<div class="wrapper">
-    <div class="container">
-        @Html.Partial("_PostPartial")
+@Html.Partial("_PostPartial")
 
-        @Html.PageLinks(Model.PagingInfo, x => Url.Action("Index", new { page = x }))
-    </div>
-</div>
-
-
+@Html.PageLinks(Model.PagingInfo, x => Url.Action("Index", new { page = x }))
 
 <div class="wrapper">
     <div class="container">

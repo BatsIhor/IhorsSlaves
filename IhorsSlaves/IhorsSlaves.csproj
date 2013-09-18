@@ -204,7 +204,6 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\PagingInfo.cs" />
-    <Compile Include="Models\Picture.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\ShowPostsOnPages.cs" />
     <Compile Include="Models\ViewPostModel.cs" />
@@ -375,6 +374,7 @@
     <Content Include="Views\Home\EditPost.cshtml" />
     <Content Include="Scripts\minified\themes\monocons\monocons.eot" />
     <Content Include="Scripts\minified\themes\monocons\monocons.ttf" />
+    <Content Include="Views\Shared\ContactUs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
