@@ -63,11 +63,11 @@
                                                                                                       {
                             <div class="row half">
                                 <div class="6u">
-                                    @Html.TextBoxFor(m => m.Comment.User)
+                                    @Html.TextBoxFor(m => m.Comment.User, new {name="name", placeholder="Name", type="text", @class="text" })
                                     @Html.ValidationMessageFor(m => m.Comment.User)
                                 </div>
                                 <div class="6u">
-                                    @Html.TextBoxFor(m => m.Comment.Email)
+                                    @Html.TextBoxFor(m => m.Comment.Email, new {name="email", placeholder="Email", type="text", @class="text" })
                                     @Html.ValidationMessageFor(m => m.Comment.Email)
                                 </div>
                             </div>}
