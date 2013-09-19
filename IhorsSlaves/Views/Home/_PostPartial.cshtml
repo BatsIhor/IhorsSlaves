@@ -11,7 +11,7 @@
 
     <ul>
         <li>
-            @p.PostDate 
+            @p.PostDate.ToShortDateString() 
             @Html.Label("Comments: ") @p.Comments.Count
             @Html.ActionLink(p.PostUser, "Manage", "Account")
         </li>
