@@ -190,6 +190,7 @@
     <Compile Include="Context\IhorsSlaversDBContext.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AlbumController.cs" />
+    <Compile Include="Controllers\FeedbackController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DR\NinjectDR.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -204,6 +205,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\Feedback.cs" />
     <Compile Include="Models\ImagesAlbum.cs" />
     <Compile Include="Models\PagingInfo.cs" />
     <Compile Include="Models\Image.cs" />
@@ -383,6 +385,11 @@
     <Content Include="Views\Album\Create.cshtml" />
     <Content Include="Views\Album\Edit.cshtml" />
     <Content Include="Views\Album\Delete.cshtml" />
+    <Content Include="Views\Feedback\Index.cshtml" />
+    <Content Include="Views\Feedback\Details.cshtml" />
+    <Content Include="Views\Feedback\Create.cshtml" />
+    <Content Include="Views\Feedback\Edit.cshtml" />
+    <Content Include="Views\Feedback\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

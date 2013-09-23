@@ -38,18 +38,18 @@ namespace IhorsSlaves.Controllers
         //
         // GET: /Feedback/Create
 
-        public ActionResult Create()
+        /*public ActionResult Create()
         {
             return View();
-        }
+        }*/
 
         //
         // POST: /Feedback/Create
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Create(Feedback feedback)
         {
+            feedback.Date = DateTime.Now;
             if (ModelState.IsValid)
             {
                 db.Feedbacks.Add(feedback);
@@ -63,7 +63,7 @@ namespace IhorsSlaves.Controllers
         //
         // GET: /Feedback/Edit/5
 
-        public ActionResult Edit(int id = 0)
+        /*public ActionResult Edit(int id = 0)
         {
             Feedback feedback = db.Feedbacks.Find(id);
             if (feedback == null)
@@ -71,11 +71,11 @@ namespace IhorsSlaves.Controllers
                 return HttpNotFound();
             }
             return View(feedback);
-        }
+        }*/
 
         //
         // POST: /Feedback/Edit/5
-
+        /*
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Feedback feedback)
@@ -87,7 +87,7 @@ namespace IhorsSlaves.Controllers
                 return RedirectToAction("Index");
             }
             return View(feedback);
-        }
+        }*/
 
         //
         // GET: /Feedback/Delete/5
@@ -95,11 +95,13 @@ namespace IhorsSlaves.Controllers
         public ActionResult Delete(int id = 0)
         {
             Feedback feedback = db.Feedbacks.Find(id);
+            db.Feedbacks.Remove(feedback);
+            db.SaveChanges();
             if (feedback == null)
             {
                 return HttpNotFound();
             }
-            return View(feedback);
+            return RedirectToAction("Index");
         }
 
         //
