@@ -453,3 +453,6 @@ D:\Git\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.dll
 D:\Git\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.pdb
 D:\Git\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.csprojResolveAssemblyReference.cache
 C:\Users\Arsen\Documents\SmartGit\IhorsSlaves\bin\IhorsSlaves.dll.config
+C:\Users\Arsen\Documents\GitHub\IhorsSlaves\IhorsSlaves\bin\Content\skel-noscript.css
+C:\Users\Arsen\Documents\GitHub\IhorsSlaves\IhorsSlaves\bin\Content\style-n1.css
+C:\Users\Arsen\Documents\GitHub\IhorsSlaves\IhorsSlaves\bin\Content\style.css

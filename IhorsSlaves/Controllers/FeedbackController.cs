@@ -16,7 +16,7 @@ namespace IhorsSlaves.Controllers
 
         //
         // GET: /Feedback/
-
+        [Authorize(Roles="admin")]
         public ActionResult Index()
         {
             return View(db.Feedbacks.ToList());
@@ -24,7 +24,7 @@ namespace IhorsSlaves.Controllers
 
         //
         // GET: /Feedback/Details/5
-
+        [Authorize(Roles = "admin")]
         public ActionResult Details(int id = 0)
         {
             Feedback feedback = db.Feedbacks.Find(id);
@@ -54,7 +54,7 @@ namespace IhorsSlaves.Controllers
             {
                 db.Feedbacks.Add(feedback);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
 
             return View(feedback);
@@ -91,7 +91,7 @@ namespace IhorsSlaves.Controllers
 
         //
         // GET: /Feedback/Delete/5
-
+        [Authorize(Roles = "admin")]
         public ActionResult Delete(int id = 0)
         {
             Feedback feedback = db.Feedbacks.Find(id);
@@ -106,7 +106,7 @@ namespace IhorsSlaves.Controllers
 
         //
         // POST: /Feedback/Delete/5
-
+        [Authorize(Roles = "admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
