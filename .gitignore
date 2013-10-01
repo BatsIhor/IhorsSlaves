@@ -161,3 +161,7 @@ pip-log.txt
 
 # Mac crap
 .DS_Store
+
+# DB
+C:\Users\Arsen\Documents\GitHub\IhorsSlaves\IhorsSlaves\App_Data\IhorsSlaves.Context.IhorsSlaversDBContext.mdf
+C:\Users\Arsen\Documents\GitHub\IhorsSlaves\IhorsSlaves\App_Data\IhorsSlaves.Context.IhorsSlaversDbContext_log.ldf
