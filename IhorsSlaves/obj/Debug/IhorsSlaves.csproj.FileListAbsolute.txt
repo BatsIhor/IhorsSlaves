@@ -456,3 +456,9 @@ C:\Users\Arsen\Documents\SmartGit\IhorsSlaves\bin\IhorsSlaves.dll.config
 C:\Users\Arsen\Documents\GitHub\IhorsSlaves\IhorsSlaves\bin\Content\skel-noscript.css
 C:\Users\Arsen\Documents\GitHub\IhorsSlaves\IhorsSlaves\bin\Content\style-n1.css
 C:\Users\Arsen\Documents\GitHub\IhorsSlaves\IhorsSlaves\bin\Content\style.css
+C:\Users\Arsen\Documents\GitHub\IhorsSlaves\IhorsSlaves\bin\ActionMailer.Net.dll
+C:\Users\Arsen\Documents\GitHub\IhorsSlaves\IhorsSlaves\bin\ActionMailer.Net.Mvc.dll
+C:\Users\Arsen\Documents\GitHub\IhorsSlaves\IhorsSlaves\bin\ActionMailer.Net.pdb
+C:\Users\Arsen\Documents\GitHub\IhorsSlaves\IhorsSlaves\bin\ActionMailer.Net.xml
+C:\Users\Arsen\Documents\GitHub\IhorsSlaves\IhorsSlaves\bin\ActionMailer.Net.Mvc.pdb
+C:\Users\Arsen\Documents\GitHub\IhorsSlaves\IhorsSlaves\bin\ActionMailer.Net.Mvc.xml
