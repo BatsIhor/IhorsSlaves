@@ -52,14 +52,6 @@ namespace IhorsSlaves.Controllers
             feedback.Date = DateTime.Now;
             if (ModelState.IsValid)
             {
-                /*try
-                {*/
-                    new EmailController().SendMail(feedback).Deliver();
-                /*}
-                catch(Exception)
-                {
-                } 
-                */
                 db.Feedbacks.Add(feedback);
                 db.SaveChanges();
                 return RedirectToAction("Index", "Home");
