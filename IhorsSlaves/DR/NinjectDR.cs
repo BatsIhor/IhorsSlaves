@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Web.Mvc;
 using Ninject;
 using IhorsSlaves.Repository;
+using IhorsSlaves.Tools.Mail;
 
 namespace IhorsSlaves.DR
 {
@@ -29,6 +30,7 @@ namespace IhorsSlaves.DR
         private void AddBindings()
         {
             kernel.Bind<IPostRepository>().To<PostRepository>();
+            //kernel.Bind<IMailSender>().To<MailSender>();
         }
     }
 }

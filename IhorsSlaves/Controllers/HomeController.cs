@@ -90,9 +90,12 @@ namespace IhorsSlaves.Controllers
             //TODO check for user role and allow to edit post only the same user or admin.
             if (ModelState.IsValid)
             {
-                repository.EditPost(post);
-                repository.SaveChanges();
-                return RedirectToAction("Index");
+                if (User.Identity.Name == post.PostUser)
+                {
+                    repository.EditPost(post);
+                    repository.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
             return View(post);
         }

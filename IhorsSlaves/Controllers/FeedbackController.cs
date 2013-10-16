@@ -7,11 +7,19 @@ using System.Web;
 using System.Web.Mvc;
 using IhorsSlaves.Models;
 using IhorsSlaves.Context;
+using IhorsSlaves.Tools.Mail;
 
 namespace IhorsSlaves.Controllers
 {
     public class FeedbackController : Controller
     {
+        private MailSender mailSender = new MailSender();
+
+        /*public FeedbackController(IMailSender mailSender)
+        {
+            this.mailSender = mailSender;
+        }*/ //To do work this^
+
         private IhorsSlaversDbContext db = new IhorsSlaversDbContext();
 
         //
@@ -54,6 +62,7 @@ namespace IhorsSlaves.Controllers
             {
                 db.Feedbacks.Add(feedback);
                 db.SaveChanges();
+                mailSender.SendReportMessage(feedback.Email);
                 return RedirectToAction("Index", "Home");
             }
 
