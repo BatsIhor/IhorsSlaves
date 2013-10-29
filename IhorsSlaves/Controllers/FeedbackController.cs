@@ -15,7 +15,7 @@ namespace IhorsSlaves.Controllers
     {
         
         private IhorsSlaversDbContext db = new IhorsSlaversDbContext();
-
+        private MailSender mailSender = new MailSender();
         //
         // GET: /Feedback/
         [Authorize(Roles="admin")]
@@ -56,7 +56,7 @@ namespace IhorsSlaves.Controllers
             {
                 db.Feedbacks.Add(feedback);
                 db.SaveChanges();
-                MailSender.SendMessage(feedback.Email);
+                mailSender.SendMessage(feedback.Email);
                 return RedirectToAction("Index", "Home");
             }
 

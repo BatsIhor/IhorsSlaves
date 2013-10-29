@@ -5,33 +5,32 @@ using System.Web;
 using System.Net.Mail;
 using System.Net;
 using System.Threading;
+using System.Configuration;
 
 namespace IhorsSlaves.Tools.Mail
 {
-    public static class MailSender
+    public  class MailSender
     {
-        private static MailMessage message = new MailMessage();
+        private  MailMessage message = new MailMessage();
 
-        private static SmtpClient smtp = new SmtpClient();
+        private  SmtpClient smtp = new SmtpClient();
 
-        private static string To { get; set; }
+        private  string To { get; set; }
 
-        private static string Subject { get; set; }
+        private  string Subject { get; set; }
 
-        private static string Body { get; set; }
+        private  string Body { get; set; }
 
-        private static MailAddress From { get; set; }
+        private  MailAddress From { get; set; }
 
-        public static SmtpDeliveryMethod DeliveryMethod { get; set; }
+        public  SmtpDeliveryMethod DeliveryMethod { get; set; }
 
-
-        static MailSender()
+        public MailSender()
         {
             From = new MailAddress("megacodersmail@gmail.com");
-            DeliveryMethod = SmtpDeliveryMethod.Network; ;
         }
 
-        public static void SendMessage(string to, string subject = "Report",
+        public  void SendMessage(string to, string subject = "Report",
             string body = "Thank you for writing to us. Team MegaCoders=)")
         {
             To = to;
@@ -41,7 +40,7 @@ namespace IhorsSlaves.Tools.Mail
             ThreadPool.QueueUserWorkItem(t => Send());
         }
 
-        private static void Send()
+        private  void Send()
         {
             try
             {
@@ -50,13 +49,13 @@ namespace IhorsSlaves.Tools.Mail
                 message.Subject = Subject;
                 message.Body = Body;
 
-                smtp.Port = 587;
-                smtp.Host = "smtp.gmail.com";
-                smtp.EnableSsl = true;
-                smtp.UseDefaultCredentials = false;
-                smtp.Credentials = new NetworkCredential("megacodersmail@gmail.com", "123qwerty123");
-                smtp.PickupDirectoryLocation = @"D:\MailLogs";
-                smtp.DeliveryMethod = DeliveryMethod;
+                smtp.Port = MailConfig.Port;
+                smtp.Host = MailConfig.Host;
+                smtp.EnableSsl = MailConfig.EnableSsl;
+                smtp.UseDefaultCredentials = MailConfig.DefaultCredentials;
+                smtp.Credentials = new NetworkCredential(MailConfig.UserName, MailConfig.Password);
+                smtp.PickupDirectoryLocation = MailConfig.PickupDirectoryLocation;
+                smtp.DeliveryMethod = MailConfig.DeliveryMethod;
                 smtp.Send(message);
             }
             catch (Exception)
