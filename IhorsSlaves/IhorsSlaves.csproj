@@ -221,7 +221,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IPostRepository.cs" />
     <Compile Include="Repository\PostRepository.cs" />
-    <Compile Include="Tools\Mail\IMailSender.cs" />
     <Compile Include="Tools\Mail\MailSender.cs" />
   </ItemGroup>
   <ItemGroup>

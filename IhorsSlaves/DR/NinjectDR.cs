@@ -30,7 +30,6 @@ namespace IhorsSlaves.DR
         private void AddBindings()
         {
             kernel.Bind<IPostRepository>().To<PostRepository>();
-            //kernel.Bind<IMailSender>().To<MailSender>();
         }
     }
 }

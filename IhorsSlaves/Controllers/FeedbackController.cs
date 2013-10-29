@@ -13,13 +13,7 @@ namespace IhorsSlaves.Controllers
 {
     public class FeedbackController : Controller
     {
-        private MailSender mailSender = new MailSender();
-
-        /*public FeedbackController(IMailSender mailSender)
-        {
-            this.mailSender = mailSender;
-        }*/ //To do work this^
-
+        
         private IhorsSlaversDbContext db = new IhorsSlaversDbContext();
 
         //
@@ -62,7 +56,7 @@ namespace IhorsSlaves.Controllers
             {
                 db.Feedbacks.Add(feedback);
                 db.SaveChanges();
-                mailSender.SendReportMessage(feedback.Email);
+                MailSender.SendMessage(feedback.Email);
                 return RedirectToAction("Index", "Home");
             }
 
