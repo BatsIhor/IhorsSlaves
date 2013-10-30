@@ -2,18 +2,20 @@
 
 @foreach (var p in Model.Posts)
 {
-    <header>
+    <div class="post">
+   
         <h2>@Html.ActionLink(p.PostName, "FullPost", new { PostId = p.PostId })</h2>
-    </header>
-    <p>
+    
+        <div class="shortpost">
         @Html.Raw(p.Text)
-    </p>
-
+        </div>
     <ul>
         <li>
             @p.PostDate.ToShortDateString() 
             @Html.Label("Comments: ") @p.Comments.Count
             @Html.ActionLink(p.PostUser, "Manage", "Account")
+                <div id="line" ></div>   
         </li>
     </ul>
+    </div>
 }
