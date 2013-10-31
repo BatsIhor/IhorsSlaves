@@ -19,6 +19,7 @@ namespace IhorsSlaves.Repository
         {
             post.PostUser = user;
             post.PostDate = date;
+            post.ShortPost = post.Text.Substring(0, 512);
             context.Posts.Add(post);
         }
 

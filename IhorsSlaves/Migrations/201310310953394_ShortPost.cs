@@ -1,0 +1,18 @@
+namespace IhorsSlaves.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class ShortPost : DbMigration
+    {
+        public override void Up()
+        {
+            AddColumn("dbo.Posts", "ShortPost", c => c.String());
+        }
+        
+        public override void Down()
+        {
+            DropColumn("dbo.Posts", "ShortPost");
+        }
+    }
+}

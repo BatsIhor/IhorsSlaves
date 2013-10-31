@@ -10,12 +10,13 @@
         @Html.Raw(p.Text)
         </div>
     <ul>
+        <li> @Html.ActionLink("Read more...", "FullPost", new { PostId = p.PostId })</li>
         <li>
             @p.PostDate.ToShortDateString() 
             @Html.Label("Comments: ") @p.Comments.Count
             @Html.ActionLink(p.PostUser, "Manage", "Account")
-                <div id="line" ></div>   
         </li>
+        <div id="line" ></div>   
     </ul>
     </div>
 }

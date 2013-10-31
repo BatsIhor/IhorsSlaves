@@ -208,6 +208,10 @@
     <Compile Include="Migrations\201309141343024_AddRequiredToComment.Designer.cs">
       <DependentUpon>201309141343024_AddRequiredToComment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201310310953394_ShortPost.cs" />
+    <Compile Include="Migrations\201310310953394_ShortPost.Designer.cs">
+      <DependentUpon>201310310953394_ShortPost.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Comment.cs" />
@@ -410,6 +414,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201309141343024_AddRequiredToComment.resx">
       <DependentUpon>201309141343024_AddRequiredToComment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201310310953394_ShortPost.resx">
+      <DependentUpon>201310310953394_ShortPost.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

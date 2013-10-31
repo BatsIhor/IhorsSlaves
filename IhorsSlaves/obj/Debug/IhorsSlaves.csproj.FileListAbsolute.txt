@@ -654,3 +654,4 @@ C:\Users\Arsen\Documents\SmartGit\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.
 C:\Users\Arsen\Documents\SmartGit\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.csproj.GenerateResource.Cache
 C:\Users\Arsen\Documents\SmartGit\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.dll
 C:\Users\Arsen\Documents\SmartGit\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.pdb
+C:\Users\Arsen\Documents\SmartGit\IhorsSlaves\IhorsSlaves\obj\Debug\IhorsSlaves.Migrations.ShortPost.resources
